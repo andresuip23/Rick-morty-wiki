@@ -4,8 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Pagination } from "swiper";
 
-function  CharacterCards({data}) {
-    const filteredCharacters = data.slice(0,6);
+function  CharacterCards({data,filtered}) {
   return (
     <>
       <Swiper
@@ -14,7 +13,7 @@ function  CharacterCards({data}) {
         spaceBetween={0}
         pagination={{ clickable: true }}
       >
-        {filteredCharacters.map((data) => {
+        {(filtered || data).map((data) => {
           return (
             <SwiperSlide key={data.id}>
               <div className="w-64 mx-3 my-3 bg-white rounded-lg shadow-md">

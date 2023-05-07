@@ -7,8 +7,7 @@ function Header() {
       { name: "Home", href: "/" },
       { name: "Characters", href: "/characters" },
       { name: "Episodes", href: "/episodes" },
-      { name: "About us", href: "/about" },
-      { name: "Contact", href: "/contact" },
+      { name: "Location", href: "/location" },
     ];
   
     return (

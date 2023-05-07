@@ -3,9 +3,9 @@ import useFetchData from "../hooks/useFetchData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Pagination } from "swiper";
-import CharacterCards from '../Cards/CharacterCards'
-import EpisodesCards from '../Cards/EpisodesCards'
-import LocationCards from '../Cards/LocationCards'
+import CharacterCards from '../CardsSlider/CharacterCards'
+import EpisodesCards from '../CardsSlider/EpisodesCards'
+import LocationCards from '../CardsSlider/LocationCards'
 
 
 
@@ -13,15 +13,16 @@ import LocationCards from '../Cards/LocationCards'
 function Cards({selected}) {
   
   const data = useFetchData(selected);
+  const filtered = data.slice(0,6);
 
   const renderCard = (data) => {
     switch (selected) {
       case "character":
-        return <CharacterCards data={data} />;
+        return <CharacterCards data={data} filtered={filtered} />;
       case "episode":
-        return <EpisodesCards data={data} />;
+        return <EpisodesCards data={data} filtered={filtered} />;
       case "location":
-        return <LocationCards data={data} />;
+        return <LocationCards data={data} filtered={filtered} />;
       default:
         return null;
     }
