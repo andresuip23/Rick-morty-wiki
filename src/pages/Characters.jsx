@@ -12,7 +12,6 @@ function Characters() {
         setPage(page);
     }
     const data = useFetchData(`character/?page=${page}`);
-    console.log(data);
     return ( 
         <>
         <div className='bg-gray-800'>
